@@ -1,0 +1,294 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import "tailwindcss";
+/* Enable dark mode with class strategy */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Custom Breakpoints */
+  --breakpoint-2md: 56rem;
+  --breakpoint-2lg: 70rem;
+  --font-raleway: "Raleway", sans-serif;
+  --font-saria: "Saira", sans-serif;
+  --font-titillium: "Titillium Web", sans-serif;
+
+  /* Animation Keyframes */
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-top {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-bottom {
+    from {
+      opacity: 1;
+      transform: translateY(80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes bounce-top {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes bounce-bottom {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(220 38 38 / 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgb(220 38 38 / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgb(220 38 38 / 0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 1;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+
+  /* Animation Utilities */
+  --animate-slide-in-left: slide-in-left 0.8s ease-out forwards;
+  --animate-slide-in-right: slide-in-right 0.8s ease-out forwards;
+  --animate-slide-in-top: slide-in-top 0.8s ease-out forwards;
+  --animate-slide-in-bottom: slide-in-bottom 1.2s ease-out forwards;
+  --animate-bounce-slow: bounce-slow 4s ease-in-out infinite;
+  --animate-bounce-top: bounce-top 3s ease-in-out infinite;
+  --animate-bounce-bottom: bounce-bottom 3s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-fade-in-down: fade-in-down 0.8s ease-out forwards;
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s infinite;
+  --animate-scale-in: scale-in 0.6s ease-out forwards;
+  --animate-scale-out: scale-out 0.5s ease-out forwards;
+}
+
+/* Prevent flicker before delayed animation starts */
+[class*="delay-"] {
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+[class*="delay-"].animate-slide-in-bottom,
+[class*="delay-"].animate-slide-in-top,
+[class*="delay-"].animate-slide-in-left,
+[class*="delay-"].animate-slide-in-right,
+[class*="delay-"].animate-sclae-in,
+[class*="delay-"].animate-sclae-out {
+  animation-fill-mode: forwards;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [class*="delay-"] {
+    animation-fill-mode: both;
+  }
+}
+
+/* Dark Mode Colors using CSS variables */
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #fef2f2;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-accent: #dc2626;
+  --color-accent-hover: #b91c1c;
+  --color-border: #e5e7eb;
+}
+
+.dark {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #1c1917;
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a8a29e;
+  --color-accent: #ef4444;
+  --color-accent-hover: #f87171;
+  --color-border: #404040;
+}
+
+/* Base styles */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgb(220 38 38 / 0.15);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Staggered Animation Delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
