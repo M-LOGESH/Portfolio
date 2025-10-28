@@ -115,7 +115,7 @@ export default function Header() {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="relative px-2 py-1 text-md 2lg:text-lg font-medium text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300"
+                      className="relative px-2 py-1 text-sm 2lg:text-base font-medium text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-300"
                     >
                       <motion.span
                         className={`relative inline-block ${
