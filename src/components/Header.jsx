@@ -67,7 +67,7 @@ export default function Header() {
   // };
 
   const viewResume = () => {
-    const resumeUrl = "/Resume_Logesh.pdf";
+    const resumeUrl = "/Resume_Logesh_M.pdf";
     window.open(resumeUrl, "_blank", "noopener,noreferrer");
   };
 

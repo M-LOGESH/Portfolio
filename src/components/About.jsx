@@ -24,7 +24,7 @@ export default function About() {
   }, []);
 
   const viewResume = () => {
-    const resumeUrl = "/Resume_Logesh.pdf";
+    const resumeUrl = "/Resume_Logesh_M.pdf";
     window.open(resumeUrl, "_blank", "noopener,noreferrer");
   };
 
@@ -93,7 +93,7 @@ export default function About() {
               {/* Profile Image with faded bottom effect */}
               <div className="absolute top-1 sm:top-1 right-1 sm:right-5 w-42 h-42 sm:w-70 sm:h-70 z-10 image-fade-container">
                 <img
-                  src="/profile2.png"
+                  src="/profile1.png"
                   alt="John Doe"
                   className="w-full h-full object-contain drop-shadow-2xl image-fade"
                 />
@@ -222,9 +222,9 @@ export default function About() {
                 </div>
 
                 {/* Profile Image with faded bottom effect */}
-                <div className="absolute top-2 -right-1 2lg:top-1 2lg:right-4 w-77 h-77 2lg:w-95 2lg:h-95 z-10">
+                <div className="absolute top-2 -right-1 2lg:top-1 2lg:right-3 w-77 h-77 2lg:w-95 2lg:h-95 z-10">
                   <img
-                    src="/profile2.png"
+                    src="/profile1.png"
                     alt="Logesh M"
                     className="w-full h-full object-contain drop-shadow-2xl image-fade"
                   />
@@ -258,15 +258,15 @@ export default function About() {
         @keyframes triangle-float {
           0%,
           100% {
-            transform: translateY(0px) rotate(12deg);
+            transform: translateY(0px) rotate(10deg);
           }
           50% {
-            transform: translateY(-10px) rotate(12deg);
+            transform: translateY(-5px) rotate(10deg);
           }
         }
 
         .animate-triangle-float {
-          animation: triangle-float 6s ease-in-out infinite;
+          animation: triangle-float 4s ease-in-out infinite;
         }
 
         /* Image fade effect */
@@ -285,8 +285,8 @@ export default function About() {
           -webkit-mask-image: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 1) 75%,
-            rgba(0, 0, 0, 0.3) 95%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0.3) 94%,
             rgba(0, 0, 0, 0) 100%
           );
         }
