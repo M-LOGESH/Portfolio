@@ -55,7 +55,7 @@ export default function Education() {
       role: "KLN INNOVATION & RESEARCH PARK",
       company: "K.L.N. College of Engineering",
       description: "Developed a Laser Transmitter and Receiver Signal Coordination System using Raspberry Pi for real-time terrain profiling. Created graphical representations of land surfaces for precise agricultural land levelling.",
-      duration: "Jun 2024 – Aug 2024",
+      duration: "Mar 2023 – Dec 2023",
       logo: "/irp.webp"
     },
   ];
